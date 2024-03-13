@@ -79,7 +79,8 @@ class ScanPhotoViewController: UIViewController, ImageScannerControllerDelegate,
         _result!(true)
         self.dismiss(animated: true)
     }
-    
+
+    func imageScannerController(_ scanner: ImageScannerController,  cameraScannerFocused results: Bool) {}
     
     func imageScannerControllerDidCancel(_ scanner: ImageScannerController) {
         // Your ViewController is responsible for dismissing the ImageScannerController
