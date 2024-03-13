@@ -20,6 +20,9 @@ public protocol ImageScannerControllerDelegate: NSObjectProtocol {
     /// - Discussion: Your delegate's implementation of this method should dismiss the image scanner controller.
     func imageScannerController(_ scanner: ImageScannerController, didFinishScanningWithResults results: ImageScannerResults)
 
+    /// Tells the delegate that the user focused/unFocused camera screen.    
+    func imageScannerController(_ scanner: ImageScannerController, cameraScannerFocused results: Bool)
+
     /// Tells the delegate that the user cancelled the scan operation.
     ///
     /// - Parameters:
