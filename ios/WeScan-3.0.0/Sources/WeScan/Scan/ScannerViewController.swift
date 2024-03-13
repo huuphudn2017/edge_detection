@@ -118,6 +118,9 @@ public final class ScannerViewController: UIViewController {
         if device.torchMode == .on {
             toggleFlash()
         }
+        if let imageScannerController = navigationController as? ImageScannerController {
+            imageScannerController.imageScannerDelegate?.imageScannerController(imageScannerController, cameraScannerFocused: false)
+        }
     }
 
     // MARK: - Setups
