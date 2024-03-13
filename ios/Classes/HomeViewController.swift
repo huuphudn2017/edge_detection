@@ -90,6 +90,10 @@ class HomeViewController: UIViewController, ImageScannerControllerDelegate {
     func hideButtons() {
         selectPhotoButton.isHidden = true
     }
+
+    func showButtons() {
+        selectPhotoButton.isHidden = false
+    }
     
     private func setupConstraints() {
         var selectPhotoButtonConstraints = [NSLayoutConstraint]()
@@ -122,6 +126,17 @@ class HomeViewController: UIViewController, ImageScannerControllerDelegate {
         _result!(false)
         self.hideButtons()
         self.dismiss(animated: true)
+    }
+
+    func imageScannerController(_ scanner: ImageScannerController, cameraScannerFocused results: Bool) {
+        if results {
+            self.showButtons()
+            print("cameraScannerFocused")
+        }
+        else {
+            print("cameraScannerUnFocused")
+            self.hideButtons()
+        }        
     }
     
     func imageScannerController(_ scanner: ImageScannerController, didFinishScanningWithResults results: ImageScannerResults) {
